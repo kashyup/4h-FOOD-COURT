@@ -1,8 +1,9 @@
 const mongoose = require("mongoose");
 
-var mongoURL = 'mongodb+srv://kashyaprohit:kashyap123@cluster0.dcoqp.mongodb.net/mern-pizza'
+require('dotenv').config();
+var mongoURI = process.env.mongoURL
 
-mongoose.connect(mongoURL , {useUnifiedTopology:true , useNewUrlParser:true})
+mongoose.connect(mongoURI , {useUnifiedTopology:true , useNewUrlParser:true})
 
 var db = mongoose.connection
 
